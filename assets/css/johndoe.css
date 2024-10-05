@@ -11662,7 +11662,7 @@ pre .code {
 .contact .contact-form-card,
 .contact .contact-info-card {
   padding: 35px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);;
   min-height: 500px;
 }
 
