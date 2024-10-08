@@ -109,6 +109,14 @@ address {
   line-height: inherit;
 }
 
+@media (max-width: 1200px) {
+    .navbar.sticky-top {
+        position: fixed;
+        top: 0;
+    }
+}
+
+
 ol,
 ul,
 dl {
