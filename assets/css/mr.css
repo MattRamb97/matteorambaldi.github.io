@@ -11496,7 +11496,8 @@ pre .code {
   min-height: 500px;*/
   height: 80vh;
   min-height: 600px;
-  background-color: #343a40 !important;
+  /*background-color: #343a40 !important;*/
+  background: url('https://www.matteorambaldi.it/assets/imgs/back-ground.jpg') no-repeat center center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
