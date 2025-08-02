@@ -4749,8 +4749,7 @@ input[type="button"].btn-block {
 
   .navbar-collapse.collapsing {
     height: auto !important;
-    transition: none !important;
-    display: none;
+    overflow: hidden;
   }
 
   .navbar-collapse.show {
