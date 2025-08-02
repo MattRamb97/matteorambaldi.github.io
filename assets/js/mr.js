@@ -8,12 +8,8 @@ $(document).ready(function(){
 
             var hash = this.hash;
 
-            $('.navbar-collapse').collapse('hide');
-
-            var offset = $('.navbar').outerHeight(); 
-
             $('html, body').animate({
-                scrollTop: $(hash).offset().top - offset
+                scrollTop: $(hash).offset().top
             }, 700, function(){
                 window.location.hash = hash;
             });
