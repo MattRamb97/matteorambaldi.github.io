@@ -1,4 +1,3 @@
-
 // smooth scroll
 $(document).ready(function(){
     $(".navbar .nav-link").on('click', function(event) {
@@ -9,8 +8,12 @@ $(document).ready(function(){
 
             var hash = this.hash;
 
+            $('.navbar-collapse').collapse('hide');
+
+            var offset = $('.navbar').outerHeight(); 
+
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
+                scrollTop: $(hash).offset().top - offset
             }, 700, function(){
                 window.location.hash = hash;
             });
