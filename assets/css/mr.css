@@ -4719,30 +4719,15 @@ input[type="button"].btn-block {
 
 @media (max-width: 767.98px) {
   .navbar {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
     height: 48px;
     padding: 0.25rem 1rem;
-    background-color: transparent !important;
-    box-shadow: none;
-    z-index: 1050;
-  }
-
-  .navbar-toggler {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.9rem;
   }
 
   .header {
-    margin-top: 0 !important;
+    margin-top: 52px; /* Spazio per la navbar fissa */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   }
-
-  .header .header-content {
-    padding-top: 64px; 
-  }
-
+  
   .navbar-expand-md .navbar-collapse {
     position: absolute;
     top: 100%;
@@ -4754,10 +4739,9 @@ input[type="button"].btn-block {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
 
-  .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid {
-    padding-right: 0;
-    padding-left: 0;
+  .navbar-expand-md {
+    position: relative;
+    z-index: 1000;
   }
 
   .navbar-collapse.collapsing {
@@ -4768,10 +4752,11 @@ input[type="button"].btn-block {
   .navbar-collapse.show {
     display: block !important;
   }
-
-  .navbar-expand-md {
-    position: relative;
-    z-index: 1000;
+  
+  .navbar-expand-md > .container,
+  .navbar-expand-md > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
