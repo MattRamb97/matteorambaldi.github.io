@@ -4727,7 +4727,7 @@ input[type="button"].btn-block {
   }
 
   .header {
-    margin-top: 76.59375px; /* Spazio per la navbar fissa */
+    margin-top: 52px; /* Spazio per la navbar fissa */
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   }
   
