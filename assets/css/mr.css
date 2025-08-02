@@ -11556,6 +11556,9 @@ pre .code {
   .header .header-content .header-mono {
     letter-spacing: 2px;
   }
+  .about-card {
+    margin-bottom: 30px;
+  }
 }
 
 .header-title {
