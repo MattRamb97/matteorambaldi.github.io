@@ -4718,6 +4718,19 @@ input[type="button"].btn-block {
 }
 
 @media (max-width: 767.98px) {
+  .navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050; /* Assicurati che sia sopra all'header */
+  }
+
+  .header {
+    margin-top: 76.59375px; /* Spazio per la navbar fissa */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
   .navbar-expand-md .navbar-collapse {
     position: absolute;
     top: 100%;
