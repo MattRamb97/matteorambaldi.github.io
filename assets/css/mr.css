@@ -4718,6 +4718,32 @@ input[type="button"].btn-block {
 }
 
 @media (max-width: 767.98px) {
+  .navbar-expand-md .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 999;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .navbar-expand-md {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .navbar-collapse.collapsing {
+    height: auto !important;
+    transition: none !important;
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block !important;
+  }
+  
   .navbar-expand-md > .container,
   .navbar-expand-md > .container-fluid {
     padding-right: 0;
