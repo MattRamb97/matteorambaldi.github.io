@@ -4747,11 +4747,13 @@ input[type="button"].btn-block {
   .navbar-expand-md .navbar-collapse {
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 999;
+    left: 0; right: 0;
     padding: 1rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.35)) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     box-shadow: none;
+    z-index: 999;
   }
 
   .navbar-expand-md {
