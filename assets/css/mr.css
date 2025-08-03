@@ -4722,43 +4722,57 @@ input[type="button"].btn-block {
     position: fixed !important;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1050; /* Assicurati che sia sopra all'header */
+    right: 0;
+    height: 48px;
+    padding: 0.25rem 1rem;
+    z-index: 1050;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .navbar-toggler {
+    border: 1px solid #fff !important;
+    background: transparent !important;
+    color: #fff !important;
+    padding: 4px 6px;
+    font-size: 1.2rem;
+    z-index: 1100;
+  }
+
+  .navbar-toggler-icon {
+    filter: brightness(0) invert(1); /* rende bianca l'icona */
   }
 
   .header {
-    margin-top: 52px; /* Spazio per la navbar fissa */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  }
-  
-  .navbar-expand-md .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    z-index: 999;
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 48px;
   }
 
-  .navbar-expand-md {
-    position: relative;
+  .navbar-collapse {
+    position: absolute;
+    top: 48px;
+    right: 0;
+    left: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.75); /* sfondo leggibile sia su header che su bianco */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 1000;
+    border-radius: 0 0 8px 8px;
+    transition: all 0.3s ease;
   }
 
   .navbar-collapse.collapsing {
     height: auto !important;
-    transition: none !important;
+    overflow: hidden;
     display: none;
   }
 
   .navbar-collapse.show {
     display: block !important;
   }
-  
-  .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid {
+
+  .navbar-expand-lg > .container,
+  .navbar-expand-lg > .container-fluid {
     padding-right: 0;
     padding-left: 0;
   }
