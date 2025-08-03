@@ -4718,65 +4718,49 @@ input[type="button"].btn-block {
 }
 
 @media (max-width: 767.98px) {
+  /* NAVBAR compatta e trasparente */
   .navbar {
     position: fixed !important;
     top: 0;
     left: 0;
     right: 0;
     height: 48px;
-    z-index: 1050;
     padding: 0.25rem 1rem;
-    background: transparent !important;
-    box-shadow: none;
-    pointer-events: none; 
-  }
-
-  .navbar-toggler {
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    font-size: 1rem;
-    line-height: 1;
-    border: 1px solid #fff !important;
     background-color: transparent !important;
-    pointer-events: auto;
-    z-index: 1100;
-    position: relative;
-  }
-
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-  }
-
-  .navbar-toggler:focus {
     box-shadow: none;
+    z-index: 1050;
   }
 
+  /* Header attaccato in alto */
   .header {
     margin-top: 0 !important;
   }
 
-  .navbar-expand-lg .navbar-collapse {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: auto;
-    width: auto;
-    min-width: 220px;
-    max-width: 90vw;
-
-    padding: 1rem;
-    margin-top: 48px; 
-    background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.3));
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-radius: 8px 0 8px 8px;
-
-    z-index: 2000;
-    transform-origin: top right;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Contenuto dell'header abbassato leggermente se sovrapposto */
+  .header .header-content {
+    padding-top: 52px; /* o quanto basta per spostare testo sotto la navbar */
   }
 
+  /* Collapse (dropdown) bianco sovrapposto */
+  .navbar-expand-md .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 999;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Container senza padding orizzontale */
+  .navbar-expand-md > .container,
+  .navbar-expand-md > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* No overflow durante apertura */
   .navbar-collapse.collapsing {
     height: auto !important;
     overflow: hidden;
@@ -4784,13 +4768,17 @@ input[type="button"].btn-block {
 
   .navbar-collapse.show {
     display: block !important;
-    opacity: 1;
   }
 
-  .navbar-expand-lg > .container,
-  .navbar-expand-lg > .container-fluid {
-    padding-right: 0;
-    padding-left: 0;
+  /* Necessario per layering corretto */
+  .navbar-expand-md {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
   }
 }
 
