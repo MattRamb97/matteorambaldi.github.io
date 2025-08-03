@@ -4737,12 +4737,15 @@ input[type="button"].btn-block {
     padding: 0;
     font-size: 1rem;
     line-height: 1;
-    border: 1px solid #fff !important; /* bordo bianco */
-    color: #fff !important;            /* icona bianca */
+    border: 1px solid #fff !important;
     background-color: transparent !important;
     pointer-events: auto;
     z-index: 1100;
     position: relative;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
   }
 
   .navbar-toggler:focus {
@@ -4753,22 +4756,17 @@ input[type="button"].btn-block {
     margin-top: 0 !important;
   }
 
-  .navbar-expand-md .navbar-collapse {
+  .navbar-expand-lg .navbar-collapse {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     padding: 1rem;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.3));
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     z-index: 1000;
     border-radius: 0 0 8px 8px;
-  }
-
-  .navbar-expand-md {
-    position: relative;
-    z-index: 1000;
   }
 
   .navbar-collapse.collapsing {
@@ -4780,8 +4778,8 @@ input[type="button"].btn-block {
     display: block !important;
   }
 
-  .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid {
+  .navbar-expand-lg > .container,
+  .navbar-expand-lg > .container-fluid {
     padding-right: 0;
     padding-left: 0;
   }
