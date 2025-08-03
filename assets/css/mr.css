@@ -4728,7 +4728,7 @@ input[type="button"].btn-block {
     padding: 0.25rem 1rem;
     background: transparent !important;
     box-shadow: none;
-    pointer-events: none; /* Permette click-through se serve */
+    pointer-events: none; 
   }
 
   .navbar-toggler {
@@ -4737,9 +4737,9 @@ input[type="button"].btn-block {
     padding: 0;
     font-size: 1rem;
     line-height: 1;
-    border: 1px solid #fff; /* bordo bianco */
-    color: #fff;            /* icona bianca */
-    background-color: transparent;
+    border: 1px solid #fff !important; /* bordo bianco */
+    color: #fff !important;            /* icona bianca */
+    background-color: transparent !important;
     pointer-events: auto;
     z-index: 1100;
     position: relative;
