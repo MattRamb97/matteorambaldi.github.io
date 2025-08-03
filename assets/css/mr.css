@@ -4718,30 +4718,19 @@ input[type="button"].btn-block {
 }
 
 @media (max-width: 767.98px) {
-  /* NAVBAR compatta e trasparente */
   .navbar {
     position: fixed !important;
     top: 0;
     left: 0;
-    right: 0;
-    height: 48px;
-    padding: 0.25rem 1rem;
-    background-color: transparent !important;
-    box-shadow: none;
-    z-index: 1050;
+    width: 100%;
+    z-index: 1050; /* Assicurati che sia sopra all'header */
   }
 
-  /* Header attaccato in alto */
   .header {
-    margin-top: 0 !important;
+    margin-top: 52px; /* Spazio per la navbar fissa */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   }
-
-  /* Contenuto dell'header abbassato leggermente se sovrapposto */
-  .header .header-content {
-    padding-top: 52px; /* o quanto basta per spostare testo sotto la navbar */
-  }
-
-  /* Collapse (dropdown) bianco sovrapposto */
+  
   .navbar-expand-md .navbar-collapse {
     position: absolute;
     top: 100%;
@@ -4753,32 +4742,25 @@ input[type="button"].btn-block {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
 
-  /* Container senza padding orizzontale */
-  .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  /* No overflow durante apertura */
-  .navbar-collapse.collapsing {
-    height: auto !important;
-    overflow: hidden;
-  }
-
-  .navbar-collapse.show {
-    display: block !important;
-  }
-
-  /* Necessario per layering corretto */
   .navbar-expand-md {
     position: relative;
     z-index: 1000;
   }
 
-  .navbar-toggler {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.9rem;
+  .navbar-collapse.collapsing {
+    height: auto !important;
+    transition: none !important;
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block !important;
+  }
+  
+  .navbar-expand-md > .container,
+  .navbar-expand-md > .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
