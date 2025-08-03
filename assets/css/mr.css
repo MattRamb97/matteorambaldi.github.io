@@ -4757,16 +4757,24 @@ input[type="button"].btn-block {
   }
 
   .navbar-expand-lg .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: fixed;
+    top: 0;
     right: 0;
+    left: auto;
+    width: auto;
+    min-width: 220px;
+    max-width: 90vw;
+
     padding: 1rem;
+    margin-top: 48px; 
     background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.3));
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    z-index: 1000;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px 0 8px 8px;
+
+    z-index: 2000;
+    transform-origin: top right;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .navbar-collapse.collapsing {
@@ -4776,6 +4784,7 @@ input[type="button"].btn-block {
 
   .navbar-collapse.show {
     display: block !important;
+    opacity: 1;
   }
 
   .navbar-expand-lg > .container,
