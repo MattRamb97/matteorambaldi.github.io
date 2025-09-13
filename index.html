@@ -22,9 +22,9 @@
         <div class="container">
             <ul class="social-icons pt-3">
 	    	<li class="social-item"><a class="social-link text-light" href="https://github.com/MattRamb97"><i class="ti-github" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://www.linkedin.com/in/matteo-rambaldi-5a66a6107"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
+            <li class="social-item"><a class="social-link text-light" href="https://www.linkedin.com/in/matteo-rambaldi-5a66a6107"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
 	    	<li class="social-item"><a class="social-link text-light" href="https://www.instagram.com/rambaldi.matteo"><i class="ti-instagram" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link text-light" href="https://www.facebook.com/matteo.rambaldi.52"><i class="ti-facebook" aria-hidden="true"></i></a></li>
+            <li class="social-item"><a class="social-link text-light" href="https://www.facebook.com/matteo.rambaldi.52"><i class="ti-facebook" aria-hidden="true"></i></a></li>
 	    </ul>  
             <div class="header-content">
                 <h4 class="header-subtitle" >Hello, I am</h4>
@@ -96,10 +96,10 @@
                     <li><span>Teams</span> : rambmat </li>
                 </ul>
                 <ul class="social-icons pt-3">
-		    <li class="social-item"><a class="social-link href="https://github.com/MattRamb97"><i class="ti-github" aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link href="https://www.linkedin.com/in/matteo-rambaldi-5a66a6107"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
-	    	    <li class="social-item"><a class="social-link href="https://www.instagram.com/rambaldi.matteo"><i class="ti-instagram" aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link href="https://www.facebook.com/matteo.rambaldi.52"><i class="ti-facebook" aria-hidden="true"></i></a></li>
+		            <li class="social-item"><a class="social-link text-dark" href="https://github.com/MattRamb97"><i class="ti-github" aria-hidden="true"></i></a></li>
+                    <li class="social-item"><a class="social-link text-dark" href="https://www.linkedin.com/in/matteo-rambaldi-5a66a6107"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
+                    <li class="social-item"><a class="social-link text-dark" href="https://www.instagram.com/rambaldi.matteo/"><i class="ti-instagram" aria-hidden="true"></i></a></li>
+                    <li class="social-item"><a class="social-link text-dark" href="https://www.facebook.com/matteo.rambaldi.52"><i class="ti-facebook" aria-hidden="true"></i></a></li>
                 </ul>  
             </div>
             <div class="col-12 col-lg-4 about-card">
@@ -636,7 +636,31 @@
                 <div class="col-lg-8 col-md-12 mb-3">
                     <div class="contact-form-card">
                         <h4 class="contact-title">Send a message</h4>
-                        <form action="https://formspree.io/f/mlevdbew" method="POST" name="form">
+                        <form action="https://formspree.io/f/mlevdbew" method="POST" name="contact">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input id="name" class="form-control" type="text" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input id="email" class="form-control" type="email" name="email" required autocomplete="email" inputmode="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" name="message" rows="7" required></textarea>
+                        </div>
+
+                        <!-- Honeypot -->
+                        <div aria-hidden="true" hidden>
+                            <label>Leave this field empty</label>
+                            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <!-- Redirect / success -->
+                        <input type="hidden" name="_subject" value="Portfolio contact">
+                        <button type="submit" class="form-control btn btn-primary">Send Message</button>
+                        </form>
+                        <!-- <form action="https://formspree.io/f/mlevdbew" method="POST" name="form">
                             <div class="form-group">
                                 <input class="form-control" type="text" name="name" placeholder="Name *" required>
                             </div>
@@ -649,7 +673,7 @@
                             <div class="form-group ">
                                 <button type="submit" class="form-control btn btn-primary">Send Message</button>
                             </div>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 mb-3">
@@ -680,11 +704,11 @@
                             </div>
                         </div>                                                                 
                         <ul class="social-icons pt-4">
-			    <li class="social-item"><a class="social-link text-dark" href="https://github.com/MattRamb97"><i class="ti-github" aria-hidden="true"></i></a></li>
+			                <li class="social-item"><a class="social-link text-dark" href="https://github.com/MattRamb97"><i class="ti-github" aria-hidden="true"></i></a></li>
                             <li class="social-item"><a class="social-link text-dark" href="https://www.linkedin.com/in/matteo-rambaldi-5a66a6107"><i class="ti-linkedin" aria-hidden="true"></i></a></li>
-			    <li class="social-item"><a class="social-link text-dark" href="https://www.instagram.com/rambaldi.matteo/"><i class="ti-instagram" aria-hidden="true"></i></a></li>
+			                <li class="social-item"><a class="social-link text-dark" href="https://www.instagram.com/rambaldi.matteo/"><i class="ti-instagram" aria-hidden="true"></i></a></li>
                             <li class="social-item"><a class="social-link text-dark" href="https://www.facebook.com/matteo.rambaldi.52"><i class="ti-facebook" aria-hidden="true"></i></a></li>
-			</ul> 
+			            </ul> 
                     </div>
                 </div>
             </div>
