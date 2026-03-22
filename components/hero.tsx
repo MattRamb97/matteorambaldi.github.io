@@ -60,7 +60,7 @@ export function Hero() {
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
-              href="https://www.matteorambaldi.it/assets/docs/MATTEO_RAMBALDI_CV.pdf"
+              href="/assets/docs/matteorambaldi_cv.pdf"
               download="matteorambaldi_cv.pdf"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-8 py-3 text-sm font-medium text-background transition-all duration-300 hover:bg-foreground/90 hover:scale-[1.02]"
             >

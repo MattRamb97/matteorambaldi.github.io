@@ -14,25 +14,38 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Matteo Rambaldi — Computer | AI Engineer',
-  description: 'Computer and AI Engineer passionate about exploring new technologies and creating innovative solutions for real-world problems.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+  metadataBase: new URL('https://matteorambaldi.it'),
+  title: 'Matteo Rambaldi — AI Systems Engineer',
+  description: 'AI Systems Engineer focused on deploying models to real-world hardware, from software to embedded systems.',
+  applicationName: 'Matteo Rambaldi Portfolio',
+  authors: [{ name: 'Matteo Rambaldi', url: 'https://matteorambaldi.it' }],
+  keywords: [
+    'Matteo Rambaldi',
+    'AI Systems Engineer',
+    'AI Engineer',
+    'Embedded AI',
+    'Computer Engineer',
+    'Portfolio',
+  ],
+  creator: 'Matteo Rambaldi',
+  publisher: 'Matteo Rambaldi',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Matteo Rambaldi — AI Systems Engineer',
+    description:
+      'AI Systems Engineer focused on deploying models to real-world hardware, from software to embedded systems.',
+    url: 'https://matteorambaldi.it',
+    siteName: 'Matteo Rambaldi',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Matteo Rambaldi — AI Systems Engineer',
+    description:
+      'AI Systems Engineer focused on deploying models to real-world hardware, from software to embedded systems.',
   },
 }
 
