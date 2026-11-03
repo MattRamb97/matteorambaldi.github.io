@@ -1,6 +1,4 @@
-'use client'
-
-import { ArrowUpRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 const projects = [
   {
@@ -70,65 +68,51 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="px-6 py-32 md:px-12 lg:px-24" suppressHydrationWarning>
-      <div className="mb-16">
-        <p className="mb-4 font-mono text-sm tracking-widest text-muted-foreground uppercase">
-          Selected Work
-        </p>
-        <h2 className="text-3xl font-medium tracking-tight text-foreground md:text-4xl">
-          Projects
-        </h2>
-      </div>
+    <section id="projects" className="section bg-surface">
+      <div className="container-wide">
+        <header className="reveal mb-12 md:mb-16">
+          <h2 className="type-headline text-foreground">
+            Projects. <span className="text-muted-foreground">Selected work, from research to deployment.</span>
+          </h2>
+        </header>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
-          <article
-            key={index}
-            className="group relative flex flex-col rounded-lg border border-border bg-card p-6 transition-all duration-500 hover:border-muted-foreground/30 hover:bg-secondary/50"
-            suppressHydrationWarning
-          >
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0 z-10"
-                aria-label={`View ${project.title} on GitHub`}
-              />
-            )}
-            <div className="mb-4 flex items-start justify-between">
-              <span className="font-mono text-xs text-muted-foreground">
-                {project.year}
-              </span>
-              <ArrowUpRight
-                className={`h-4 w-4 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
-                  project.github
-                    ? 'text-muted-foreground group-hover:text-foreground'
-                    : 'text-muted-foreground/30'
-                }`}
-              />
-            </div>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <article
+              key={project.title}
+              className={`reveal tile group relative flex flex-col p-8 shadow-tile ${project.github ? 'tile-interactive' : ''}`}
+            >
+              <p className="type-caption mb-2 font-semibold text-tertiary-foreground">{project.year}</p>
 
-            <h3 className="mb-3 text-lg font-medium text-foreground transition-colors duration-300 group-hover:text-foreground">
-              {project.title}
-            </h3>
+              <h3 className="type-title mb-3 text-foreground">{project.title}</h3>
 
-            <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
-              {project.description}
-            </p>
+              <p className="type-body mb-6 flex-1 text-muted-foreground">{project.description}</p>
 
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-border bg-background px-3 py-1 font-mono text-xs text-muted-foreground transition-colors duration-300 group-hover:border-muted-foreground/30"
+              <ul className="mb-6 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <li key={tag} className="type-micro rounded-full bg-surface px-3 py-1.5 text-muted-foreground">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+
+              {project.github ? (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-apple type-body after:absolute after:inset-0 after:rounded-tile after:content-['']"
+                  aria-label={`View ${project.title} on GitHub`}
                 >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </article>
-        ))}
+                  View on GitHub
+                  <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={2.25} />
+                </a>
+              ) : (
+                <p className="type-body text-tertiary-foreground">Private repository</p>
+              )}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

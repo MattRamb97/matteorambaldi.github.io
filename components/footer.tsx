@@ -2,14 +2,10 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border px-6 py-8 md:px-12 lg:px-24">
-      <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-        <p className="text-sm text-muted-foreground">
-          © {currentYear} Matteo Rambaldi. All rights reserved.
-        </p>
-        <p className="text-sm text-muted-foreground">
-          AI SYSTEMS ENGINEER
-        </p>
+    <footer className="bg-surface px-6">
+      <div className="container-wide type-micro flex flex-col items-center justify-between gap-2 border-t border-hairline py-6 text-tertiary-foreground md:flex-row">
+        <p>Copyright © {currentYear} Matteo Rambaldi. All rights reserved.</p>
+        <p>AI Systems Engineer</p>
       </div>
     </footer>
   )

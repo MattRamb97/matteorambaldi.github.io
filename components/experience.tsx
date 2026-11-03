@@ -1,5 +1,3 @@
-import { ArrowUpRight } from 'lucide-react'
-
 const experiences = [
   {
     period: '2026 — Present',
@@ -19,10 +17,10 @@ const experiences = [
   },
   {
     period: '2025',
-    title: 'Master\'s Degree Student',
+    title: "Master's Degree Student",
     company: 'University of Padua',
     description:
-      'Pursuing Master\'s Degree in Computer Engineering with curriculum in Artificial Intelligence and Robotics.',
+      "Pursuing Master's Degree in Computer Engineering with curriculum in Artificial Intelligence and Robotics.",
     technologies: ['AI', 'Robotics', 'Machine Learning'],
   },
   {
@@ -35,18 +33,17 @@ const experiences = [
   },
   {
     period: '2021',
-    title: 'Bachelor\'s Degree',
+    title: "Bachelor's Degree",
     company: 'University of Padua',
     description:
-      'Completed Bachelor\'s Degree in Computer Engineering, establishing a strong foundation in software development and engineering principles.',
+      "Completed Bachelor's Degree in Computer Engineering, establishing a strong foundation in software development and engineering principles.",
     technologies: ['Computer Engineering', 'Programming'],
   },
   {
     period: '2016',
     title: 'CRM Software Developer',
     company: 'Turo Italia S.p.a',
-    description:
-      'Developed customer relationship management software solutions for business applications.',
+    description: 'Developed customer relationship management software solutions for business applications.',
     technologies: ['CRM', 'Software Development'],
   },
   {
@@ -61,67 +58,31 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section id="experience" className="px-6 py-32 md:px-12 lg:px-24">
-      <div className="mb-16">
-        <p className="mb-4 font-mono text-sm tracking-widest text-muted-foreground uppercase">
-          Career Path
-        </p>
-        <h2 className="text-3xl font-medium tracking-tight text-foreground md:text-4xl">
-          Experience
-        </h2>
-      </div>
+    <section id="experience" className="section bg-background">
+      <div className="container-apple">
+        <header className="reveal mb-12 md:mb-16">
+          <h2 className="type-headline text-foreground">
+            Experience. <span className="text-muted-foreground">A path from ICT to edge AI.</span>
+          </h2>
+        </header>
 
-      <div className="relative">
-        {/* Timeline line */}
-        <div className="absolute left-0 top-0 hidden h-full w-px bg-border md:left-[140px] md:block" />
-
-        <div className="flex flex-col gap-12">
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="group relative grid gap-4 md:grid-cols-[140px_1fr] md:gap-8"
+        <ol className="border-t border-hairline">
+          {experiences.map((exp) => (
+            <li
+              key={`${exp.period}-${exp.title}`}
+              className="reveal grid gap-2 border-b border-hairline py-8 md:grid-cols-[180px_1fr] md:gap-10 md:py-10"
             >
-              {/* Period */}
-              <div className="flex items-start">
-                <span className="font-mono text-sm text-muted-foreground">
-                  {exp.period}
-                </span>
+              <p className="type-caption pt-1 font-semibold text-tertiary-foreground">{exp.period}</p>
+
+              <div>
+                <h3 className="type-title text-foreground">{exp.title}</h3>
+                <p className="type-body mb-3 mt-1 font-semibold text-muted-foreground">{exp.company}</p>
+                <p className="type-body mb-4 max-w-2xl text-muted-foreground">{exp.description}</p>
+                <p className="type-caption text-tertiary-foreground">{exp.technologies.join(' · ')}</p>
               </div>
-
-              {/* Timeline dot */}
-              <div className="absolute left-[-4px] top-1.5 hidden h-2 w-2 rounded-full bg-muted-foreground transition-colors duration-300 group-hover:bg-foreground md:left-[136px] md:block" />
-
-              {/* Content */}
-              <div className="rounded-lg border border-transparent p-0 transition-all duration-500 md:pl-8 group-hover:border-border group-hover:bg-card group-hover:p-6 md:group-hover:pl-8">
-                <div className="mb-2 flex items-center gap-2">
-                  <h3 className="text-lg font-medium text-foreground">
-                    {exp.title}
-                  </h3>
-                  <span className="text-muted-foreground">·</span>
-                  <span className="flex items-center gap-1 text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
-                    {exp.company}
-                    <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  </span>
-                </div>
-
-                <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                  {exp.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-border bg-secondary px-3 py-1 font-mono text-xs text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   )

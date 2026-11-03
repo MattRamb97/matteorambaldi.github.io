@@ -1,108 +1,83 @@
 'use client'
 
-import { type MouseEvent, useState } from 'react'
-import { ArrowDown } from 'lucide-react'
+import { type PointerEvent, useState } from 'react'
+import { ChevronDown, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 
+const restingTransform = 'perspective(1400px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
+
 export function Hero() {
-  const [portraitTransform, setPortraitTransform] = useState(
-    'perspective(1400px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
-  )
+  const [portraitTransform, setPortraitTransform] = useState(restingTransform)
 
-  const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
-  const handlePortraitMove = (event: MouseEvent<HTMLDivElement>) => {
+  const handlePortraitMove = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== 'mouse') return
     const rect = event.currentTarget.getBoundingClientRect()
     const x = (event.clientX - rect.left) / rect.width
     const y = (event.clientY - rect.top) / rect.height
-    const rotateY = (x - 0.5) * 8
-    const rotateX = (0.5 - y) * 8
-
+    const rotateY = (x - 0.5) * 6
+    const rotateX = (0.5 - y) * 6
     setPortraitTransform(
-      `perspective(1400px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`
+      `perspective(1400px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`
     )
   }
 
-  const resetPortraitTransform = () => {
-    setPortraitTransform('perspective(1400px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)')
-  }
-
   return (
-    <section className="relative flex min-h-screen flex-col justify-center px-6 md:px-12 lg:px-24">
-      {/* Subtle gradient background */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_oklch(0.12_0_0)_0%,_transparent_50%)]" />
+    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-6 pb-24 pt-28 md:pt-[52px]">
+      <div className="container-wide grid items-center gap-14 md:grid-cols-[1.1fr_0.9fr] md:gap-12 lg:gap-20">
+        <div className="hero-enter text-center md:text-left">
+          <p className="type-eyebrow mb-3 text-muted-foreground">AI Systems Engineer</p>
 
-      <div className="relative z-10 grid w-full items-center gap-14 md:grid-cols-2 md:gap-12 lg:gap-20">
-        <div className="max-w-4xl">
-          <p
-            className="mb-4 font-mono text-sm tracking-[0.22em] text-foreground/58 uppercase"
-            style={{ textShadow: '0 1px 10px rgba(0, 0, 0, 0.14)' }}
-          >
-            AI Systems Engineer
+          <h1 className="type-hero mb-6 text-foreground">Matteo Rambaldi</h1>
+
+          <p className="type-subhead mx-auto mb-10 max-w-xl text-muted-foreground md:mx-0">
+            <span className="text-foreground">From models to silicon.</span> Anyone can train a model. I make it run
+            where it matters.
           </p>
 
-          <h1
-            className="mb-6 text-4xl font-medium tracking-tight text-foreground md:text-6xl lg:text-7xl text-balance"
-            style={{ textShadow: '0 1px 0 rgba(255, 255, 255, 0.04), 0 12px 32px rgba(0, 0, 0, 0.24)' }}
-          >
-            Matteo Rambaldi
-          </h1>
-
-          <p
-            className="mb-12 max-w-2xl text-lg leading-relaxed text-foreground/68 md:text-xl"
-            style={{ textShadow: '0 1px 0 rgba(255, 255, 255, 0.02), 0 8px 22px rgba(0, 0, 0, 0.16)' }}
-          >
-            From models to silicon.<br />
-            Anyone can train a model. I make it run where it matters.
-          </p>
-
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
             <a
               href="/assets/docs/matteorambaldi_cv.pdf"
               download="matteorambaldi_cv.pdf"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-8 py-3 text-sm font-medium text-background transition-all duration-300 hover:bg-foreground/90 hover:scale-[1.02]"
+              className="btn-pill btn-primary"
             >
               Download Resume
             </a>
-            <a
-              href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-8 py-3 text-sm font-medium text-foreground transition-all duration-300 hover:bg-secondary hover:border-muted-foreground/30"
-            >
-              View Portfolio
+            <a href="#projects" className="link-apple type-body px-2 py-2.5">
+              View projects
+              <ChevronRight className="h-4 w-4" strokeWidth={2.25} />
             </a>
           </div>
         </div>
 
-        <div className="relative hidden md:flex md:justify-center" style={{ perspective: '1400px' }}>
+        <div
+          className="hero-enter flex justify-center [animation-delay:150ms] md:justify-end"
+          style={{ perspective: '1400px' }}
+        >
           <div
-            onMouseMove={handlePortraitMove}
-            onMouseLeave={resetPortraitTransform}
-            className="relative aspect-[4/5] w-full max-w-[320px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-[0_42px_110px_rgba(0,0,0,0.42)] transition-transform duration-300 ease-out after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:bg-gradient-to-t after:from-black/34 after:via-black/10 after:to-white/5 lg:max-w-[420px]"
+            onPointerMove={handlePortraitMove}
+            onPointerLeave={() => setPortraitTransform(restingTransform)}
+            className="relative aspect-[4/5] w-full max-w-[300px] overflow-hidden rounded-tile bg-surface shadow-[0_30px_80px_-20px_var(--shadow-color)] transition-transform duration-500 ease-apple md:max-w-[340px] lg:max-w-[420px]"
             style={{ transform: portraitTransform, transformStyle: 'preserve-3d', willChange: 'transform' }}
           >
             <Image
               src="/images/matteo-portrait.webp"
               alt="Portrait of Matteo Rambaldi"
               fill
-              sizes="(min-width: 1024px) 420px, 320px"
-              className="object-cover object-[center_18%] grayscale contrast-125 brightness-[0.88]"
+              sizes="(min-width: 1024px) 420px, (min-width: 768px) 340px, 300px"
+              className="object-cover object-[center_40%]"
               priority
             />
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <button
-        onClick={scrollToProjects}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+      <a
+        href="#projects"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 p-2 text-tertiary-foreground transition-colors duration-200 hover:text-foreground md:block"
         aria-label="Scroll to projects"
       >
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <ArrowDown className="h-4 w-4 animate-bounce" />
-      </button>
+        <ChevronDown className="h-6 w-6 animate-bounce" strokeWidth={1.5} />
+      </a>
     </section>
   )
 }
